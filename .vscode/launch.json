@@ -1,0 +1,60 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Client",
+            "url": "http://localhost:3000/dashboard",
+            "sourceMaps": true,
+            "diagnostics": true,
+            "trace": true,
+            "webRoot": "${workspaceRoot}/src",
+            "userDataDir": "${workspaceRoot}/.vscode/chrome"
+        },
+        {
+            "name": "Server",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/node_modules/lite-server/bin/lite-server",
+            "stopOnEntry": false,
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "console": "internalConsole",
+            "sourceMaps": false,
+            "outFiles": []
+        },
+        {
+            "type": "chrome",
+            "request": "attach",
+            "name": "Attach to Chrome",
+            "port": 9222
+        },
+        {
+            "name": "Attach",
+            "type": "node",
+            "request": "attach",
+            "port": 3000,
+            "address": "localhost",
+            "restart": false,
+            "sourceMaps": false,
+            "outDir": null,
+            "localRoot": "${workspaceRoot}",
+            "remoteRoot": null
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Server/Client",
+            "configurations": ["Server", "Client"]
+        }
+    ]
+}
