@@ -30,6 +30,7 @@ build/Release
 node_modules
 bower_components
 jspm_packages
+.vscode/chrome
 
 # Optional npm cache directory
 .npm
